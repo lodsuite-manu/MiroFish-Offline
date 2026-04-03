@@ -33,9 +33,9 @@ class Config:
     LLM_MODEL_NAME = os.environ.get('LLM_MODEL_NAME', 'qwen2.5:32b')
 
     # Neo4j configuration
-    NEO4J_URI = os.environ.get('NEO4J_URI', 'bolt://localhost:7687')
-    NEO4J_USER = os.environ.get('NEO4J_USER', 'neo4j')
-    NEO4J_PASSWORD = os.environ.get('NEO4J_PASSWORD', 'mirofish')
+    NEO4J_URI = os.getenv("APP_NEO4J_URI") or os.getenv("NEO4J_URI", "bolt://localhost:7687")
+    NEO4J_USER = os.getenv("APP_NEO4J_USER") or os.getenv("NEO4J_USER", "neo4j")
+    NEO4J_PASSWORD = os.getenv("APP_NEO4J_PASSWORD") or os.getenv("NEO4J_PASSWORD", "mirofish")
 
     # Embedding configuration
     EMBEDDING_MODEL = os.environ.get('EMBEDDING_MODEL', 'nomic-embed-text')
