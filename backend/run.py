@@ -42,7 +42,7 @@ def main():
     debug = Config.DEBUG
 
     # Start service
-    app.run(host=host, port=port, debug=debug, threaded=True)
+    app.run(host="0.0.0.0", port=5001, debug=False, use_reloader=False)
 
 
 if __name__ == '__main__':
